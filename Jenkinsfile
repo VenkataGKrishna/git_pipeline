@@ -1,5 +1,5 @@
 pipeline{
-     agant 
+     agant any 
      stages{
           stage('One'){
                steps{
