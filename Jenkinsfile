@@ -29,7 +29,7 @@ pipeline{
                          }
                     }
                     stage('Integration test'){
-                         agant any{
+                         agant{
                               docker{
                                    reuseNode false
                                    image 'ubuntu'
