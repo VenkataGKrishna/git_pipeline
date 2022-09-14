@@ -32,7 +32,6 @@ pipeline{
  
                         steps{
                               echo 'Running the integration unit test'
-                             image 'ubuntu'
                          }
                     }
                }
