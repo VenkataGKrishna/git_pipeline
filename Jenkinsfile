@@ -1,5 +1,5 @@
 pipeline{
-     agant any 
+     agent any 
      stages{
           stage('One'){
                steps{
@@ -29,7 +29,7 @@ pipeline{
                          }
                     }
                     stage('Integration test'){
-                         agemt{
+                         agent{
                               docker{
                                    reuseNode false
                                    image 'Ubuntu'
