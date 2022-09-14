@@ -1,8 +1,50 @@
-     echo 'hello, this is stage one pipeline project'
-     echo 'this is the second pipeline project'
-     echo 'this is the third pipeline project'
-     echo 'hello world'  
-     echo 'hello world'
-     echo 'hello world'
-     echo 'hello venkata' 
+pipeline{
+     agant 
+     stages{
+          stage('One'){
+               steps{
+                    echo 'Hello'
+               }
+          }
+          stage('Two'){
+               steps{
+                    input('Do you want to proceed')
+               }
+          }
+          stage('Three'){
+                    when{
+                         not{
+                              branch 'main'
+                         }
+                    }
+               steps{
+                    echo "Hello"
+               }
+          }
+          stage('Four'){
+               parallel{
+                    stage('Unit-test'){
+                         steps{
+                              echo "running the unit test"
+                         }
+                    }
+                    stage('Integration test'){
+                         agemt{
+                              docker{
+                                   reuseNode false
+                                   image 'Ubuntu'
+                              }
+                         }
+                         steps{
+                              echo 'Running the integration unit test'
+                         }
+                    }
+               }
+          }
+     }
+}
+}
+
+                    
+             
   
