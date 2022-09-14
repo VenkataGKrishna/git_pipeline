@@ -29,6 +29,12 @@ pipeline{
                          }
                     }
                     stage('Integration test'){
+                         agant any{
+                              docker{
+                                   reuseNode false
+                                   image 'ubuntu'
+                              }
+                         }                               
                         steps{
                               echo 'Running the integration unit test'
                          }
