@@ -1,1 +1,2 @@
 echo 'this is pipeline2'
+echo "hello"
